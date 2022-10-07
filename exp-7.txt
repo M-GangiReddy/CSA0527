@@ -1,0 +1,31 @@
+mysql> select f_name,f_dept,gender from faculty where f_id<4 group by f_id;
++---------+--------+--------+
+| f_name  | f_dept | gender |
++---------+--------+--------+
+| nagarju | python | m      |
+| hema    | DS     | f      |
+| devi    | AI     | f      |
++---------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select f_name,f_dept,gender from faculty  group by f_id order by f_name;
++----------+--------+--------+
+| f_name   | f_dept | gender |
++----------+--------+--------+
+| devi     | AI     | f      |
+| hema     | DS     | f      |
+| nagarju  | python | m      |
+| shiva    | ML     | m      |
+| srinuvas | OS     | m      |
++----------+--------+--------+
+5 rows in set (0.07 sec)
+
+mysql> select f_name,f_dept,age from faculty  group by f_id having age<38;
++---------+--------+------+
+| f_name  | f_dept | age  |
++---------+--------+------+
+| nagarju | python |   29 |
+| hema    | DS     |   32 |
+| devi    | AI     |   35 |
++---------+--------+------+
+3 rows in set (0.00 sec)

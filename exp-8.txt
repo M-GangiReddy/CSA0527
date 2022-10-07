@@ -1,0 +1,21 @@
+mysql> select * from faculty;
++------+----------+------+--------+--------+--------+
+| f_id | f_name   | age  | f_dept | gender | salary |
++------+----------+------+--------+--------+--------+
+|    1 | nagarju  |   29 | python | m      |  75000 |
+|    2 | hema     |   32 | DS     | f      |  50000 |
+|    3 | devi     |   35 | AI     | f      | 100000 |
+|    4 | shiva    |   40 | ML     | m      | 100000 |
+|    5 | srinuvas |   40 | OS     | m      |  80000 |
++------+----------+------+--------+--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select f_name,f_dept,age from faculty where age<(select avg(age) from faculty) order by f_dept;
++---------+--------+------+
+| f_name  | f_dept | age  |
++---------+--------+------+
+| devi    | AI     |   35 |
+| hema    | DS     |   32 |
+| nagarju | python |   29 |
++---------+--------+------+
+3 rows in set (0.00 sec)

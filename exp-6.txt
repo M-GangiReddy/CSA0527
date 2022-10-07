@@ -1,0 +1,91 @@
+mysql> select * from faculty;
++------+----------+------+--------+--------+--------+
+| f_id | f_name   | age  | f_dept | gender | salary |
++------+----------+------+--------+--------+--------+
+|    1 | nagarju  |   29 | python | m      |  75000 |
+|    2 | hema     |   32 | DS     | f      |  50000 |
+|    3 | devi     |   35 | AI     | f      | 100000 |
+|    4 | shiva    |   40 | ML     | m      | 100000 |
+|    5 | srinuvas |   40 | OS     | m      |  80000 |
++------+----------+------+--------+--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select count(f_name) from faculty where age<37;
++---------------+
+| count(f_name) |
++---------------+
+|             3 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select count(f_name) from faculty where age<41;
++---------------+
+| count(f_name) |
++---------------+
+|             5 |
++---------------+
+1 row in set (0.00 sec)
+
+
+mysql> select sum(salary) from faculty where f_id<3;
++-------------+
+| sum(salary) |
++-------------+
+|      125000 |
++-------------+
+1 row in set (0.07 sec)
+
+mysql> select sum(salary) from faculty;
++-------------+
+| sum(salary) |
++-------------+
+|      405000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from faculty;
++-------------+
+| avg(salary) |
++-------------+
+|  81000.0000 |
++-------------+
+1 row in set (0.00 sec)
+
+
+mysql> select min(f_id) from faculty;
++-----------+
+| min(f_id) |
++-----------+
+|         1 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select max(f_id) from faculty;
++-----------+
+| max(f_id) |
++-----------+
+|         5 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select f_name,f_dept,gender from faculty where age between 30 and 40;
++----------+--------+--------+
+| f_name   | f_dept | gender |
++----------+--------+--------+
+| hema     | DS     | f      |
+| devi     | AI     | f      |
+| shiva    | ML     | m      |
+| srinuvas | OS     | m      |
++----------+--------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select f_name,f_dept,gender from faculty where f_id in(2,3,4,5);
++----------+--------+--------+
+| f_name   | f_dept | gender |
++----------+--------+--------+
+| hema     | DS     | f      |
+| devi     | AI     | f      |
+| shiva    | ML     | m      |
+| srinuvas | OS     | m      |
++----------+--------+--------+
+4 rows in set (0.00 sec)
